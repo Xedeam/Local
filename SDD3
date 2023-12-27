@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chipi Chipi Chaba Chaba Website</title>
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+    }
+
+    iframe {
+      width: 100vw;
+      height: 100vh;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  </style>
+</head>
+<body>
+  <iframe
+    id="videoFrame"
+    src="https://www.youtube.com/embed/pyfjoqQzO5k?autoplay=1&controls=0&showinfo=0&autohide=1"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen
+  ></iframe>
+
+  <script>
+    // Autoplay video using JavaScript
+    document.getElementById('videoFrame').contentWindow.postMessage('{"event":"command","func":"playVideo","args":""}', '*');
+  </script>
+</body>
+</html>
